@@ -1,0 +1,29 @@
+{% extends "base-side-nav.njk" %}
+{% from "macros/breadcrumbs.njk" import breadcrumbs %}
+
+{% set pageTitle = "How a user's account changes over time" %}
+{% set headerNavigationActiveItem = "about" %}
+{% set sideNav = {name: "about", active: "account-lifecycle"} %}
+{% set breadcrumbs = breadcrumbs([{text: "About GOV.UK One Login", href: "/about"}]) %}
+
+{% block mainContent %}
+  <h1 class="govuk-heading-l">How a user's account changes over time</h1>
+  <p class="govuk-body">A user's GOV.UK One Login account doesn't stay static once they've signed in or proved their identity. Understanding what can change — and when — helps you design support processes and journeys that work for returning users, not just new ones.</p>
+
+  <h2 class="govuk-heading-m">When a user first arrives</h2>
+  <p class="govuk-body">Your service sends the user to GOV.UK One Login. They create an account with an email address and a password, or set up a passkey. If your service needs it, they also prove their identity at this point — this is a separate step from signing in, and you can use one without the other.</p>
+
+  <h2 class="govuk-heading-m">What's kept and reused</h2>
+  <p class="govuk-body">Once a user has signed in or proved their identity, GOV.UK One Login keeps their sign-in details and — if they proved their identity — their identity information. They can reuse both across every service that uses GOV.UK One Login, so they don't need to repeat these steps for you if they've already done them elsewhere.</p>
+
+  <h2 class="govuk-heading-m">Things that can happen later</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>The user switches to a passkey. They can add or move to a passkey after creating their account — this doesn't affect data you've already received about them. See <a class="govuk-link" href="/about/signing-users-in#passkeys">Passkeys</a>.</li>
+    <li>The user loses access to their sign-in credentials. They can recover their account. See <a class="govuk-link" href="/about/signing-users-in#recovery">Recovery</a>.</li>
+    <li>The user's session expires. GOV.UK One Login manages its own session separately from your service. See <a class="govuk-link" href="/about/signing-users-in#sessions">Sessions</a>.</li>
+    <li>The user deletes their account. They can do this at any time. See <a class="govuk-link" href="/about/signed-in-experience#account-deletion">Account deletion</a>.</li>
+  </ul>
+
+  <h2 class="govuk-heading-m">What this means for your service</h2>
+  <p class="govuk-body">Design your support processes assuming any of the above can happen to a returning user. In particular, plan for what your service does if a user comes back after a long absence, or if the identity details you hold no longer match what GOV.UK One Login has on record.</p>
+{% endblock %}

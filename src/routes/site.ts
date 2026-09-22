@@ -85,6 +85,10 @@ router.get("/about", (req, res) => {
     res.render("about.njk");
 });
 
+router.get("/about/account-lifecycle", (req, res) => {
+    res.render("about/account-lifecycle.njk");
+});
+
 router.get("/about/signing-users-in", (req, res) => {
     res.render("about/signing-users-in.njk");
 });
